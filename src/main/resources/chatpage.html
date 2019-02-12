@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/chat_styles.css" type="text/css">
+    <title>Let's chat!</title>
+    <script src="/chat_script.js" defer></script>
+</head>
+<body>
+    <div class="formwrapper">
+        <div>
+            <input type="button" class="logout" id="logoutButton" value="Log Out">
+        </div>
+        <div class="letter"></div>
+        <div class="chat_blocks">
+            <div class="main textbox" id="messages">
+            </div>
+            <div class="aside textbox" id="onlineUsers"></div>
+        </div>
+        <div class="message_blocks">
+            <div class="main textbox">
+                <textarea resizable="false" class="textarea" id="message"></textarea>
+            </div>
+            <div class="aside buttonwrapper">
+                <input type="button" class="sendbutton" id="sendButton" value="Send">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

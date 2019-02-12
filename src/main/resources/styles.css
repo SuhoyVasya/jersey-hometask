@@ -1,0 +1,101 @@
+
+* {
+    font: 30px 'Verdana', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #dedede;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+
+.letter {
+    background-color: #ffffff;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-image: url(/letter.png);
+    background-size: 50px 40px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-sizing: border-box;
+    border: 1px solid #e7e7e7;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.formwrapper {
+    background-color: #ffffff;
+    width: 500px;
+    box-sizing: border-box;
+    padding-top: 90px;
+    padding-bottom: 90px;
+    padding-right: 70px;
+    padding-left: 70px;
+    position: relative;
+    border-radius: 2px;
+}
+
+
+div input {
+    font-size: 20px;
+    border-width: 1px;
+    border-radius: 2px;
+    border-style: solid;
+    border-color: #dbdbdb;
+    outline: none;
+    height: 60px;
+    box-sizing: border-box;
+    padding: 18px;
+    width: 100%;
+    margin: 10px 0px;
+}
+
+
+form :focus {
+    border-color: #6aa45b;
+}
+
+
+.sendbutton {
+    background-color: #6aa45b;
+    border: 0;
+    border-radius: 2px;
+    height: 50px;
+    width: 100px;
+    color: #ffffff;
+    box-sizing: border-box;
+    padding: 0;
+
+}
+
+.sendbutton:active {
+    border-width: 1px;
+    border-radius: 2px;
+    border-style: inset;
+    border-color: #6aa45b;
+    color: #333;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
