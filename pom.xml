@@ -144,8 +144,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.4</version>
                 <configuration>
-                    <source>1.10</source>
-                    <target>1.10</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -157,6 +157,53 @@
                     <commandlineArgs>-XX:+UseG1GC</commandlineArgs>
                 </configuration>
             </plugin>
+            <!--plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.16.4</version>
+                <executions>
+                    <execution>
+                        <id>Build docker container</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <images>
+                        <image>
+                            <name>suhoyvasya/${project.artifactId}</name>
+                            <build>
+                                <from>java:8</from>
+                                <tags>
+                                    <tag>${project.version}</tag>
+                                </tags>
+                                <ports>
+                                    <port>8080</port>
+                                </ports>
+                                <cmd>
+                                    <shell>java -cp 'jars/*' com.lamechat.Application '/config.file'</shell>
+                                </cmd>
+                                <assembly>
+                                    <basedir>/</basedir>
+                                    <inline>
+                                        <dependencySet>
+                                            <outputDirectory>jars</outputDirectory>
+                                        </dependencySet>
+                                        <files>
+                                            <file>
+                                                <source>${project.build.directory}/${project.build.finalName}.jar</source>
+                                                <outputDirectory>jars</outputDirectory>
+                                            </file>
+                                        </files>
+                                    </inline>
+                                </assembly>
+                            </build>
+                        </image>
+                    </images>
+                </configuration>
+            </plugin-->
         </plugins>
     </build>
 
